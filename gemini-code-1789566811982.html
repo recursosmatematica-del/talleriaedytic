@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REA: Manejo de Sesgos en Salidas de IA (DUA)</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Descodificando los Sesgos en la Inteligencia Artificial</h1>
+    <p class="subtitulo">Un Recurso Educativo Abierto diseñado bajo el enfoque de Diseño Universal para el Aprendizaje (DUA)</p>
+    
+    <!-- Barra de Accesibilidad (Principio DUA: Formas de Representación) -->
+    <div class="accesibilidad-bar" aria-label="Herramientas de accesibilidad">
+      <span>Accesibilidad:</span>
+      <button id="btn-contraste" onclick="toggleContraste()">Alto Contraste</button>
+      <button id="btn-texto-mas" onclick="cambiarTexto(1)">Texto +</button>
+      <button id="btn-texto-menos" onclick="cambiarTexto(-1)">Texto -</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Módulo 1: Conceptos Clave -->
+    <section class="card" id="modulo1">
+      <h2>1. ¿Qué es un sesgo en la IA?</h2>
+      <p>Un **sesgo en la IA** ocurre cuando un modelo produce resultados sistemáticamente desproporcionados o no equitativos debido a prejuicios presentes en los datos de entrenamiento o en el diseño del algoritmo.</p>
+      
+      <div class="grid-tipos-sesgo">
+        <article class="tipo-card">
+          <h3>Sesgo de Datos</h3>
+          <p>Los datos históricos reflejan discriminaciones o desigualdades pasadas.</p>
+        </article>
+        <article class="tipo-card">
+          <h3>Sesgo de Confirmación</h3>
+          <p>El modelo o el usuario buscan validar prejuicios preexistentes.</p>
+        </article>
+        <article class="tipo-card">
+          <h3>Sesgo de Exclusión</h3>
+          <p>Ciertos grupos o demografías no están representados en la muestra.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Módulo 2: Simulación Interactiva (Principio DUA: Acción y Expresión) -->
+    <section class="card" id="modulo2">
+      <h2>2. Laboratorio de Detección de Sesgos</h2>
+      <p>Analiza los siguientes casos prácticos y decide si la respuesta generada por la IA presenta algún sesgo.</p>
+      
+      <div id="contenedor-caso">
+        <div class="caso-box">
+          <p><strong>Prompt ingresado:</strong> <span id="caso-prompt">"..."</span></p>
+          <p><strong>Salida de la IA:</strong> <span id="caso-salida">"..."</span></p>
+        </div>
+
+        <div class="opciones-interactivas">
+          <button class="btn-evaluar sesgado" onclick="evaluarRespuesta(true)">Detecto Sesgo</button>
+          <button class="btn-evaluar neutral" onclick="evaluarRespuesta(false)">Respuesta Neutral</button>
+        </div>
+
+        <div id="retroalimentacion" class="hidden" aria-live="polite"></div>
+        <button id="btn-siguiente" class="hidden" onclick="siguienteCaso()">Siguiente Caso</button>
+      </div>
+    </section>
+
+    <!-- Módulo 3: Estrategias de Mitigación -->
+    <section class="card" id="modulo3">
+      <h2>3. Buenas Prácticas de Prompteo y Mitigación</h2>
+      <ul>
+        <li><strong>Ingeniería de Prompts Accesibles:</strong> Especifica el contexto y solicita explícitamente neutralidad o múltiples perspectivas.</li>
+        <li><strong>Verificación de Fuentes:</strong> Nunca asumas la salida de un LLM como verdad absoluta sin contrastar.</li>
+        <li><strong>Auditoría de Inclusión:</strong> Pregúntate: <em>¿Qué grupo o perspectiva podría quedar omitido en esta respuesta?</em></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Recurso Educativo Abierto (REA) bajo licencia CC BY-SA 4.0 | Creado con enfoque DUA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
